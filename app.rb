@@ -6,5 +6,5 @@ require './database.rb'
 set :root, File.dirname(__FILE__)
 
 get '/' do
-  erb :hello
+  erb :index
 end

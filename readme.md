@@ -14,32 +14,6 @@ To run the app locally, install Shotgun and run
 
 Your app should then be running at `http://localhost:9393`.
 
-## Heroku App Creation
+## Using it with our javascript
 
-Heroku relies on [Git](http://devcenter.heroku.com/articles/git) for deploying apps so initialize git for the app.
-
-	$ git init
-	$ git add .
-	$ git commit -m "Initial Commit"
-
-To create a Heroku app, first be sure you are [signed up](https://api.heroku.com/signup). Then type the following in Terminal while inside of the project directory.
-
-	$ heroku create NAME_OF_YOUR_APP
-
-Once this returns successfully, push your app to Heroku.
-
-	$ git push heroku master
-
-## Heroku Database Creation
-
-If you're using DataMapper with a database, you will need to add a database. Run these commands from the root of your project, relacing the last database url with the name logged after the first command.
-
-	$ heroku addons:add heroku-postgresql:dev
-	$ heroku pg:promote [HEROKU_POSTGRESQL_REPLACEME_URL]
-
-Now you've created your database. Now you need to update the tables:
-
-	$ heroku run console
-	$ require './app.rb'
-	$ DataMapper.auto_upgrade!
-	$ exit
+To use it to create a page, just go to index.erb and add your html and javascript in there. You will use the same path for javascript file includes as we use in the main website. In the book it is src="../<whatever youre adding>" for any images or javascript files you need for your web application. In this and on the web it is simply src="/<whatever youre adding>". Everything should work from there.
